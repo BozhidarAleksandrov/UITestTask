@@ -218,9 +218,9 @@ public class PractiseFormPage extends BasePage {
 
         List<WebElement> modalElements = driver.findElements(By.id("example-modal-sizes-title-lg"));
         if (modalElements.isEmpty() || !modalElements.get(0).isDisplayed()) {
-            System.out.println("Modal was closed successfully!");
+            Assert.assertTrue(true, "Modal is not visible, as expected.");
         } else {
-            System.out.println("Modal was NOT closed successfully!");
+            Assert.fail("Modal is still visible when it should be closed.");
         }
     }
 }
